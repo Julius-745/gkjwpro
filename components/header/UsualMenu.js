@@ -16,33 +16,6 @@ export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
   
   return (
     <ListUsualMenu component="nav" aria-label="secondary mailbox folders">
-      <ListItem button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`${isMenuOpen ? 'underscored' : ''}`}>
-        <ListItemText primary="Categories" />
-      </ListItem>
-      <Collapse in={isMenuOpen} timeout="auto" unmountOnExit className="dropDownMenuList">
-        <List component="div" disablePadding>
-          {data ? (
-            data.map(category => (
-              <Link href="/categories/[id]" as={`/categories/${category.id}`} key={category.id}>
-                <a onClick={() => setIsMenuOpen(false)}>
-                  <ListItem button>
-                    <Chip
-                      label={category.name}
-                      variant="outlined"
-                      color="primary"
-                      size="small"
-                    />
-                  </ListItem>
-                </a>
-              </Link>
-            ))
-          ) : error ? (
-            <div>Error.</div>
-          ) : (
-            <div>Loading...</div>
-          )}
-        </List>
-      </Collapse>
       <Link href="/about">
         <a onClick={() => setIsMenuOpen(false)}>
           <ListItem button>

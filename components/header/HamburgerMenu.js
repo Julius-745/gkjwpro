@@ -14,7 +14,7 @@ import { faMoon, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-ic
 import { faSun } from '@fortawesome/free-regular-svg-icons'
 import Context from '../../context'
 
-export default function HamburgerMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
+export default function HamburgerMenu({ isMenuOpen, setIsMenuOpen, }) {
   const { isDarkModeOn, toggleColorMode, isSoundOn, toggleSound } = useContext(Context)
   const [ isSublistOpen, setIsSublistOpen ] = useState(false)
 
@@ -36,34 +36,6 @@ export default function HamburgerMenu({ isMenuOpen, setIsMenuOpen, data, error }
             </ListSubheader>
           }
         >
-          <ListItem button onClick={() => setIsSublistOpen(!isSublistOpen)}>
-            <ListItemText primary="Categories" />
-            {isSublistOpen ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
-          <Collapse in={isSublistOpen} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              {data ? (
-                data.map(category => (
-                  <Link href="/categories/[id]" as={`/categories/${category.id}`} key={category.id}>
-                    <a onClick={() => {setIsMenuOpen(false); setIsSublistOpen(false)}}>
-                      <ListItem button>
-                        <Chip
-                          label={category.name}
-                          variant="outlined"
-                          color="primary"
-                          size="small"
-                        />
-                      </ListItem>
-                    </a>
-                  </Link>
-                ))
-              ) : error ? (
-                <div>Error.</div>
-              ) : (
-                <div>Loading...</div>
-              )}              
-            </List>
-          </Collapse>
           <Link href="/about">
             <a onClick={() => setIsMenuOpen(false)}>
               <ListItem button>
