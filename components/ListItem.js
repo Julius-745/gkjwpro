@@ -17,7 +17,7 @@ export default function ListItem({ i }) {
   }, [])
 
   return (
-    <Link href="/articles/[id]" as={`/articles/${i.id}`} key={i.id}>
+    <Link href="/api/articles/[id]" as={`/api/articles/${i.id}`} key={i.id}>
       <StyledLink className="listItem">
         <div>
           <Image
@@ -49,7 +49,7 @@ export default function ListItem({ i }) {
                 shortname='youknowwhatblog'
                 config={
                   {
-                    url: `${process.env.NEXT_PUBLIC_PROD_HOST}/articles/${i.id}`,
+                    url: `${process.env.NEXT_PUBLIC_PROD_HOST}/api/articles/${i.id}`,
                     identifier: i.id,
                     title: i.title,
                   }

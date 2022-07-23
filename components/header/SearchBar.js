@@ -39,7 +39,7 @@ export default function SearchBar() {
     }
 
     (async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/articles`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles`)
       await sleep(1000)
       const articles = await res.json()
 

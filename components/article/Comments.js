@@ -8,7 +8,7 @@ export default function Comments({ params }) {
         shortname='youknowwhatblog'
         config={
           {
-            url: `${process.env.NEXT_PUBLIC_PROD_HOST}/articles/${params.id}`,
+            url: `${process.env.NEXT_PUBLIC_PROD_HOST}/api/articles/${params.id}`,
             identifier: params.id,
             title: params.title,
             language: 'en_GB'

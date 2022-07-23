@@ -10,7 +10,7 @@ import SearchResult from '../components/search/SearchResult'
 const fetcher = url => fetch(url).then(r => r.json())
 
 export default function SearchResults() {
-  const { data, error, isValidating } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/articles`, fetcher, {
+  const { data, error, isValidating } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles`, fetcher, {
     revalidateOnFocus: false,
     initialData: []
   })
@@ -31,7 +31,7 @@ export default function SearchResults() {
   const skeletonArr = [ 1, 2, 3, 4, 5 ]
 
   useEffect(() => {
-    mutate(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/articles`)
+    mutate(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles`)
   }, [searchValue])
 
   return (

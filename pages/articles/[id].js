@@ -8,7 +8,7 @@ import Comments from '../../components/article/Comments'
 const fetcher = url => fetch(url).then(r => r.json())
 
 export async function getStaticPaths() {
-  const articles = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/articles`)
+  const articles = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles`)
   const paths = articles.map(article => ({
     params: { id: article.id.toString() }
   }))
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const article = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/articles/${params.id}`)
+  const article = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles/${params.id}`)
 
   return { 
     props: { params, article }
@@ -26,7 +26,7 @@ export async function getStaticProps({ params }) {
 
 export default function Article({ params, article }) {
   const initialData = article
-  const { data } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/articles/${params.id}`, fetcher, { initialData })
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles/${params.id}`, fetcher, { initialData })
 
   return (
     <>

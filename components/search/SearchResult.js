@@ -80,7 +80,7 @@ export default function SearchResult({ value, result }) {
   }, [value])
 
   return (
-    <Link href="/articles/[id]" as={`/articles/${id}`}>
+    <Link href="/api/articles/[id]" as={`/api/articles/${id}`}>
       <StyledLink className="searchResult">
         <div>
           <Image
