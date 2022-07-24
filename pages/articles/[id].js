@@ -8,16 +8,15 @@ import Comments from '../../components/article/Comments'
 const fetcher = url => fetch(url).then(r => r.json())
 
 export async function getStaticPaths() {
-  const articles = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles`)
-  const paths = articles.map(article => ({
+  const articles = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles?populate=image`)
+  const paths = articles.data.map(article => ({
     params: { id: article.id.toString() }
   }))
-
   return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {
-  const article = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles/${params.id}`)
+  const article = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles/${params.id}?populate=image`)
 
   return { 
     props: { params, article }
@@ -26,15 +25,14 @@ export async function getStaticProps({ params }) {
 
 export default function Article({ params, article }) {
   const initialData = article
-  const { data } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles/${params.id}`, fetcher, { initialData })
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles/${params.id}?populate=image`, fetcher, { initialData })
 
   return (
     <>
       <Head>
         <title>{data.title}</title>
-        <meta name="description" content={data.content.substring(0, 150) + '...'} />
-        <meta property="og:image" content={data.image[0].url} />
-        <meta name="twitter:image" content={data.image[0].url} />
+        <meta name="description" content={data.data.attributes.content.substring(0, 150) + '...'} />
+        <meta property="og:image" content={`https://gkjwprob.domcloud.io/${data.data.attributes.image?.data.attributes.url}`} />
       </Head>
 
       <DivArticle>
