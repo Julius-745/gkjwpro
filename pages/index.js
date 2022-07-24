@@ -15,7 +15,7 @@ const getKey = (pageIndex, previousPageData) => {
 }
 
 export async function getStaticProps() {
-  const articles = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles?_sort=published_at:DESC&_start=0&_limit=7`)
+  const articles = await fetcher(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles?populate=image&_sort=published_at:DESC&_start=0&_limit=7`)
 
   return {
     props: { articles }
