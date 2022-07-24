@@ -10,12 +10,16 @@ import { faMoon, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-ic
 import { faSun } from '@fortawesome/free-regular-svg-icons'
 import Context from '../../context'
 import { useContext } from 'react'
+import dynamic from 'next/dynamic'
+
+const SearchBar = dynamic(() => import('./SearchBar'), { ssr: false })
 
 export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
   const { isDarkModeOn, toggleColorMode, isSoundOn, toggleSound } = useContext(Context)
   
   return (
     <ListUsualMenu component="nav" aria-label="secondary mailbox folders">
+      <SearchBar />
       <Link href="whatsapp.me">
         <a onClick={() => setIsMenuOpen(false)}>
           <ListItem button>
@@ -30,20 +34,6 @@ export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
           </ListItem>
         </a>
       </Link>
-      <ListItem 
-        button 
-        onClick={e => toggleSound(e)}
-        id={`${isSoundOn ? 'switchSoundOff' : 'switchSoundOn'}`}
-        aria-label={`Press to ${isSoundOn ? 'switch sound off' : 'switch sound on'}`}
-      >
-        {
-          isSoundOn ? (
-            <FontAwesomeIcon icon={faVolumeUp} size="lg" />
-          ) : (
-            <FontAwesomeIcon icon={faVolumeMute} size="lg" />
-          )
-        }        
-      </ListItem>
       <ListItem 
         button 
         onClick={e => toggleColorMode(e)} 
