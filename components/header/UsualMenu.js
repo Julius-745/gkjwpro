@@ -16,10 +16,17 @@ export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
   
   return (
     <ListUsualMenu component="nav" aria-label="secondary mailbox folders">
+      <Link href="whatsapp.me">
+        <a onClick={() => setIsMenuOpen(false)}>
+          <ListItem button>
+            <ListItemText primary="Contack" />
+          </ListItem>
+        </a>
+      </Link>
       <Link href="/about">
         <a onClick={() => setIsMenuOpen(false)}>
           <ListItem button>
-            <ListItemText primary="About me" />
+            <ListItemText primary="About" />
           </ListItem>
         </a>
       </Link>

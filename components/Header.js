@@ -1,3 +1,4 @@
+import Divider from '@material-ui/core/Divider'
 import styled from 'styled-components'
 import { useState } from 'react'
 import useSWR from 'swr'
@@ -40,7 +41,7 @@ export default function Header({ isDarkModeOn }) {
     </StyledHeader>
   )
 }
-
+{/* <Divider /> */}
 const StyledHeader = styled.header`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
