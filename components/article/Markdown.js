@@ -21,24 +21,21 @@ export default function Markdown({ data }) {
   return (
     <>
       <Header>
-        <h1>{data.title}</h1>
-        <time dateTime={data.published_at.slice(0, 10)}>
-          {new Date(data.published_at).toDateString().slice(4)}
+        <h1>{data.data.attributes.title}</h1>
+        <time dateTime={data.data.attributes.publishedAt.slice(0, 10)}>
+          {new Date(data.data.attributes.publishedAt).toDateString().slice(4)}
         </time>
-        <span>
-          by {data.created_by.firstname} {data.created_by.lastname}
-        </span>
       </Header>
       <Figure>
         <ProgressiveImage
-          preview={data.image[0].formats.thumbnail.url}
-          smallImage={data.image[0].formats.small.url}
-          mediumImage={data.image[0].formats.medium.url}
-          largeImage={data.image[0].formats.large.url}
-          sourceImage={data.image[0].url}
-          alt={data.image[0].alternativeText}
+          preview={`https://gkjwprob.domcloud.io/${data.data.attributes.image?.data.attributes.url}`}
+          smallImage={`https://gkjwprob.domcloud.io/${data.data.attributes.image?.data.attributes.url}`}
+          mediumImage={`https://gkjwprob.domcloud.io/${data.data.attributes.image?.data.attributes.url}`}
+          largeImage={`https://gkjwprob.domcloud.io/${data.data.attributes.image?.data.attributes.url}`}
+          sourceImage={`https://gkjwprob.domcloud.io/${data.data.attributes.image?.data.attributes.url}`}
+          alt={''}
         />
-        <figcaption><em>{data.image[0].caption}</em></figcaption>
+        <figcaption><em>{''}</em></figcaption>
       </Figure>
       {
         headings.length === 0 ? null :
@@ -56,7 +53,7 @@ export default function Markdown({ data }) {
         </Nav>
       }
       <ReactMarkdown
-        source={data.content}
+        source={data.data.attributes.content}
         escapeHtml={false}
         transformImageUri={uri =>
           uri.startsWith('http') ? uri : `${process.env.NEXT_PUBLIC_HCMS_API_URL}${uri}`
