@@ -1,11 +1,10 @@
-import Divider from '@material-ui/core/Divider'
 import styled from 'styled-components'
 import { useState } from 'react'
 import useSWR from 'swr'
 import dynamic from 'next/dynamic'
 
 import Logo from './header/Logo'
-const SearchBar = dynamic(() => import('./header/SearchBar'), { ssr: false })
+
 import HamburgerMenu from './header/HamburgerMenu'
 import UsualMenu from './header/UsualMenu'
 
@@ -18,7 +17,7 @@ export default function Header({ isDarkModeOn }) {
   return (
     <StyledHeader>
       <Logo setIsMenuOpen={setIsMenuOpen} />
-      <SearchBar />
+      
       <div>
         <div className="usualMenu">
           <UsualMenu 
@@ -29,6 +28,7 @@ export default function Header({ isDarkModeOn }) {
             isDarkModeOn={isDarkModeOn}
           />
         </div>
+
         <div className="hamburgerMenu">
           <HamburgerMenu 
             isMenuOpen={isMenuOpen} 
@@ -41,7 +41,6 @@ export default function Header({ isDarkModeOn }) {
     </StyledHeader>
   )
 }
-{/* <Divider /> */}
 const StyledHeader = styled.header`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;

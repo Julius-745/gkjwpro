@@ -10,12 +10,12 @@ import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import Chip from '@material-ui/core/Chip'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
+import { faMoon} from '@fortawesome/free-solid-svg-icons'
 import { faSun } from '@fortawesome/free-regular-svg-icons'
 import Context from '../../context'
 
-export default function HamburgerMenu({ isMenuOpen, setIsMenuOpen, }) {
-  const { isDarkModeOn, toggleColorMode, isSoundOn, toggleSound } = useContext(Context)
+export default function HamburgerMenu({ isMenuOpen, setIsMenuOpen,}) {
+  const { isDarkModeOn, toggleColorMode, } = useContext(Context)
   const [ isSublistOpen, setIsSublistOpen ] = useState(false)
 
   return (
@@ -35,28 +35,53 @@ export default function HamburgerMenu({ isMenuOpen, setIsMenuOpen, }) {
               Menu
             </ListSubheader>
           }
-        >
-          <Link href="/about">
+        > 
+          <ListItem button onClick={() => setIsSublistOpen(!isSublistOpen)}>
+            <ListItemText primary="Categories" />
+            {isSublistOpen ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={isSublistOpen} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+            <a onClick={() => {setIsMenuOpen(false); setIsSublistOpen(false)}}>
+            <ListItem button>
+               <ListItemText primary="Berita" />
+            </ListItem>
+            <ListItem button>
+               <ListItemText primary="Pesan & Laporan" />
+            </ListItem>
+            <ListItem button>
+               <ListItemText primary="Bincang" />
+            </ListItem>
+            <ListItem button>
+               <ListItemText primary="Bina Iman" />
+            </ListItem>
+            <ListItem button>
+               <ListItemText primary="Kesaksian & Pelayanan" />
+            </ListItem>
+            <ListItem button>
+               <ListItemText primary="Feature" />
+            </ListItem>
+            <ListItem button>
+               <ListItemText primary="Jeda & Doa" />
+             </ListItem>
+            </a>
+            </List>
+          </Collapse>
+
+          <Link href="/whatsapp.me">
             <a onClick={() => setIsMenuOpen(false)}>
               <ListItem button>
-                <ListItemText primary="About me" />
+                <ListItemText primary="Contact" />
               </ListItem>
             </a>
           </Link>
-          <ListItem 
-            button 
-            onClick={e => toggleSound(e)}
-            id={`${isSoundOn ? 'switchSoundOff' : 'switchSoundOn'}`}
-          >
-            {
-              isSoundOn ? (
-                <FontAwesomeIcon icon={faVolumeUp} size="lg" />
-              ) : (
-                <FontAwesomeIcon icon={faVolumeMute} size="lg" />
-              )
-            }
-            <ListItemText primary={`Sound: ${isSoundOn ? 'on' : 'off'}`} />     
-          </ListItem>
+          <Link href="/about">
+            <a onClick={() => setIsMenuOpen(false)}>
+              <ListItem button>
+                <ListItemText primary="About" />
+              </ListItem>
+            </a>
+          </Link>
           <ListItem 
             button 
             onClick={e => toggleColorMode(e)} 
@@ -88,6 +113,9 @@ const DivHamburgerMenu = styled.div`
     cursor: pointer;
     transition: all .2s ease-in-out;
     z-index: 2;
+    > :items{
+      padding-left: 5px;
+    }
     > :first-child {
       width: 36px;
       height: 5px;
