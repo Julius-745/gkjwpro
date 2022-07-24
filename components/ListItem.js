@@ -17,7 +17,7 @@ export default function ListItem({ i }) {
   }, [])
 
   return (
-    <Link href="/api/articles[id]" as={`/api/articles/${i.id}`} key={i.id}>
+    <Link href="api/articles[id]" as={`api/articles/${i.id}`} key={i.id}>
       <StyledLink className="listItem">
         <div>
           <Image
@@ -27,7 +27,7 @@ export default function ListItem({ i }) {
             height={191}
             layout="responsive"
           />
-          <h1>{i.title}</h1>
+          <h1>{i.attributes.title}</h1>
           {isCategories ? null : (
             <div className="categories">
               {
