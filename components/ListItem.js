@@ -17,12 +17,12 @@ export default function ListItem({ i }) {
   }, [])
 
   return (
-    <Link href="/api/api/articles/[id]" as={`/api/articles/${i.id}`} key={i.id}>
+    <Link href="/api/articles[id]" as={`/api/articles/${i.id}`} key={i.id}>
       <StyledLink className="listItem">
         <div>
           <Image
-            src={i.image[0].formats.large.url}
-            alt={i.image[0].alternativeText}
+            src={`https://gkjwprob.domcloud.io/${i.attributes.image?.data.attributes.url}`}
+            alt={''}
             width={320}
             height={191}
             layout="responsive"
@@ -30,17 +30,15 @@ export default function ListItem({ i }) {
           <h1>{i.title}</h1>
           {isCategories ? null : (
             <div className="categories">
-              {i.categories.map(category => {
-                return (
+              {
                   <Chip
-                    label={category.name}
+                    label={i.attributes.category}
                     variant="outlined"
                     color="primary"
                     size="small"
-                    key={category.id}
                   />
-                )
-              })}
+                
+              }
             </div>
           )}
           <div>
@@ -59,8 +57,8 @@ export default function ListItem({ i }) {
                 Comments
               </CommentCount>
             </span>
-            <time dateTime={`${i.published_at.slice(0, 10)}`}>
-              {new Date(i.published_at).toDateString().slice(4)}
+            <time dateTime={`${i.attributes.publishedAt.slice(0, 10)}`}>
+              {new Date(i.attributes.publishedAt).toDateString().slice(4)}
             </time>
           </div>
         </div>

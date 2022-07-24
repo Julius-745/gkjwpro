@@ -3,6 +3,6 @@ module.exports = withCSS({})
 
 module.exports = {
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['gkjwprob.domcloud.io'],
   },
 }
