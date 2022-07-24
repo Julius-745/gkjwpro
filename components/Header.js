@@ -12,7 +12,7 @@ import UsualMenu from './header/UsualMenu'
 const fetcher = url => fetch(url).then(r => r.json())
 
 export default function Header({ isDarkModeOn }) {
-  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles?populate=image`, fetcher)
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_HCMS_API_URL}/api/articles`, fetcher)
   const [ isMenuOpen, setIsMenuOpen ] = useState(false)
 
   return (
