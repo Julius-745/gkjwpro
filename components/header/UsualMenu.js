@@ -3,23 +3,92 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Collapse from '@material-ui/core/Collapse'
 import Chip from '@material-ui/core/Chip'
+import ExpandLess from '@material-ui/icons/ExpandLess'
+import ExpandMore from '@material-ui/icons/ExpandMore'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
 import { faSun } from '@fortawesome/free-regular-svg-icons'
 import Context from '../../context'
-import { useContext } from 'react'
+import { useState, useContext } from 'react'
 import dynamic from 'next/dynamic'
 
 const SearchBar = dynamic(() => import('./SearchBar'), { ssr: false })
 
 export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
   const { isDarkModeOn, toggleColorMode, isSoundOn, toggleSound } = useContext(Context)
+  const [ isSublistOpen, setIsSublistOpen ] = useState(false)
   
   return (
     <ListUsualMenu component="nav" aria-label="secondary mailbox folders">
       <SearchBar />
+      <ListItem button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`${isMenuOpen ? 'underscored' : ''}`}>
+        <ListItemText primary="Categories" />
+      </ListItem>
+      <Collapse in={isMenuOpen} timeout="auto" unmountOnExit className="dropDownMenuList">
+        <List component="div" disablePadding>
+        <a onClick={() => setIsMenuOpen(false)}>
+            <ListItem button>
+              <Chip
+                      label="Berita"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
+            </ListItem>
+            <ListItem button>
+            <Chip
+                      label="Pesan & Laporan"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
+            </ListItem>
+            <ListItem button>
+            <Chip
+                      label="Bincang"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
+            </ListItem>
+            <ListItem button>
+            <Chip
+                      label="Bina Iman"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
+            </ListItem>
+            <ListItem button>
+            <Chip
+                      label="Kesaksian & Pelayanan"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
+            </ListItem>
+            <ListItem button>
+            <Chip
+                      label="Feature"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
+            </ListItem>
+            <ListItem button>
+            <Chip
+                      label="Jeda & Doa"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
+             </ListItem>
+            </a>
+        </List>
+      </Collapse>
+      
       <Link href="whatsapp.me">
         <a onClick={() => setIsMenuOpen(false)}>
           <ListItem button>
