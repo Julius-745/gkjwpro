@@ -3,12 +3,10 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Collapse from '@material-ui/core/Collapse'
 import Chip from '@material-ui/core/Chip'
-import ExpandLess from '@material-ui/icons/ExpandLess'
-import ExpandMore from '@material-ui/icons/ExpandMore'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
+import { faMoon } from '@fortawesome/free-solid-svg-icons'
 import { faSun } from '@fortawesome/free-regular-svg-icons'
 import Context from '../../context'
 import { useState, useContext } from 'react'
@@ -22,7 +20,6 @@ export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
   
   return (
     <ListUsualMenu component="nav" aria-label="secondary mailbox folders">
-      <SearchBar />
       <ListItem button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`${isMenuOpen ? 'underscored' : ''}`}>
         <ListItemText primary="Categories" />
       </ListItem>
@@ -117,6 +114,7 @@ export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
           )
         }        
       </ListItem>
+      <SearchBar />
     </ListUsualMenu>
   )
 }

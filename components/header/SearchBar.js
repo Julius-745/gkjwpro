@@ -111,17 +111,7 @@ export default function SearchBar() {
 }
 
 const FormSearchBar = styled.form`
-  margin: 0 0 .5em 0;
-  display: flex;
-  > :first-child {
-    width: 109px !important;
-    > div > div {
-      padding-right: 0 !important;
-    }
-  }
-  > :nth-child(2) {
-    margin-top: .5em;
-  }
+  display: flex;  
 
   @media only screen and (min-width: 768px) {
     > :first-child {
@@ -129,7 +119,4 @@ const FormSearchBar = styled.form`
     }
   }
 
-  @media only screen and (min-width: 1024px) {
-    margin-left: 275px;
-  }
 `
