@@ -15,7 +15,7 @@ import dynamic from 'next/dynamic'
 const SearchBar = dynamic(() => import('./SearchBar'), { ssr: false })
 
 export default function UsualMenu({ isMenuOpen, setIsMenuOpen, data, error }) {
-  const { isDarkModeOn, toggleColorMode, isSoundOn, toggleSound } = useContext(Context)
+  const { isDarkModeOn, toggleColorMode} = useContext(Context)
   const [ isSublistOpen, setIsSublistOpen ] = useState(false)
   
   return (
