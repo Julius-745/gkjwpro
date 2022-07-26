@@ -41,32 +41,67 @@ export default function HamburgerMenu({ isMenuOpen, setIsMenuOpen,}) {
             {isSublistOpen ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse in={isSublistOpen} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
+            <List component="div" >
             <a onClick={() => {setIsMenuOpen(false); setIsSublistOpen(false)}}>
             <ListItem button>
-               <ListItemText primary="Berita" />
+              <Chip
+                      label="Berita"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
             </ListItem>
             <ListItem button>
-               <ListItemText primary="Pesan & Laporan" />
+            <Chip
+                      label="Pesan & Laporan"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
             </ListItem>
             <ListItem button>
-               <ListItemText primary="Bincang" />
+            <Chip
+                      label="Bincang"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
             </ListItem>
             <ListItem button>
-               <ListItemText primary="Bina Iman" />
+            <Chip
+                      label="Bina Iman"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
             </ListItem>
             <ListItem button>
-               <ListItemText primary="Kesaksian & Pelayanan" />
+            <Chip
+                      label="Kesaksian & Pelayanan"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
             </ListItem>
             <ListItem button>
-               <ListItemText primary="Feature" />
+            <Chip
+                      label="Feature"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
             </ListItem>
             <ListItem button>
-               <ListItemText primary="Jeda & Doa" />
+            <Chip
+                      label="Jeda & Doa"
+                      variant="outlined"
+                      color="primary"
+                      size="small"
+                    />
              </ListItem>
             </a>
-            </List>
-          </Collapse>
+        </List>
+      </Collapse>
 
           <Link href="/whatsapp.me">
             <a onClick={() => setIsMenuOpen(false)}>
@@ -108,14 +143,11 @@ const DivHamburgerMenu = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 48px;
+    width: 48px;  
     height: 48px;
     cursor: pointer;
     transition: all .2s ease-in-out;
     z-index: 2;
-    > :items{
-      padding-left: 5px;
-    }
     > :first-child {
       width: 36px;
       height: 5px;
