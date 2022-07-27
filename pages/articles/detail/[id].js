@@ -2,8 +2,8 @@ import useSWR from 'swr'
 import styled from 'styled-components'
 import Head from 'next/head'
 
-import Markdown from '../../components/article/Markdown'
-import Comments from '../../components/article/Comments'
+import Markdown from '../../../components/article/Markdown'
+import Comments from '../../../components/article/Comments'
 
 const fetcher = url => fetch(url).then(r => r.json())
 
@@ -77,7 +77,6 @@ const DivArticle = styled.article`
   > blockquote {
     border-left: 5px solid #BBAB92;
     padding-left: 1em;
-    align-self: start;
     font-style: italic;
   }
   > nav {

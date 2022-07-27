@@ -41,38 +41,18 @@ export default function MyApp({ Component, pageProps }) {
   const toggleColorMode = e => {
     if (e.currentTarget.id === 'swithToDarkMode') {
       setIsDarkModeOn(true)
-      localStorage.setItem('userSelectedColorMode', 'dark')
-      if (isSoundOn) {
-        new Audio('/audio/switchOff.mp3').play()
-      }      
+      localStorage.setItem('userSelectedColorMode', 'dark')  
     } else if (e.currentTarget.id === 'swithToLightMode') {
       setIsDarkModeOn(false)
-      localStorage.setItem('userSelectedColorMode', 'light')
-      if (isSoundOn) {
-        new Audio('/audio/switchOn.mp3').play()
-      }      
+      localStorage.setItem('userSelectedColorMode', 'light')      
     }
   }
 
-  const toggleSound = e => {
-    if (e.currentTarget.id === 'switchSoundOn') {
-      setIsSoundOn(true)
-      localStorage.setItem('userSelectedSoundOption', 'on')
-    } else if (e.currentTarget.id === 'switchSoundOff') {
-      setIsSoundOn(false)
-      localStorage.setItem('userSelectedSoundOption', 'off')
-      if (isSoundOn) {
-        new Audio('/audio/switchOff.mp3').play()
-      }
-    }
-  }
 
   return (
     <Context.Provider value={{
       isDarkModeOn,       
       toggleColorMode,
-      isSoundOn,
-      toggleSound
     }}>
       <GlobalStyle />
       <DivGrid className={isDarkModeOn ? 'darkMode' : ''}>

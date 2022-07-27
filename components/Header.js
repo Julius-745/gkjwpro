@@ -4,7 +4,6 @@ import useSWR from 'swr'
 import dynamic from 'next/dynamic'
 
 import Logo from './header/Logo'
-
 import HamburgerMenu from './header/HamburgerMenu'
 import UsualMenu from './header/UsualMenu'
 
@@ -17,7 +16,6 @@ export default function Header({ isDarkModeOn }) {
   return (
     <StyledHeader>
       <Logo setIsMenuOpen={setIsMenuOpen} />
-      
       <div>
         <div className="usualMenu">
           <UsualMenu 
