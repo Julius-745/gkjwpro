@@ -41,10 +41,7 @@ export default function MyApp({ Component, pageProps }) {
   const toggleColorMode = e => {
     if (e.currentTarget.id === 'swithToDarkMode') {
       setIsDarkModeOn(true)
-      localStorage.setItem('userSelectedColorMode', 'dark')
-      if (isSoundOn) {
-        new Audio('/audio/switchOff.mp3').play()
-      }      
+      localStorage.setItem('userSelectedColorMode', 'dark')  
     } else if (e.currentTarget.id === 'swithToLightMode') {
       setIsDarkModeOn(false)
       localStorage.setItem('userSelectedColorMode', 'light')      

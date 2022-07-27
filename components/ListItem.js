@@ -17,7 +17,7 @@ export default function ListItem({ i }) {
   }, [])
 
   return (
-    <Link href="/articles[id]" as={`/articles/${i.id}`} key={i.id}>
+    <Link href="/articles/detail/[id]" as={`/articles/detail/${i.id}`} key={i.id}>
       <StyledLink className="listItem">
         <div>
           <Image
