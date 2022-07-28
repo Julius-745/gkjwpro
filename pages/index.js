@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
 import ListItem from '../components/ListItem'
+import Banner from '../components/Banner'
 
 const fetcher = url => fetch(url).then(r => r.json())
 
@@ -41,6 +42,8 @@ export default function Home({ articles }) {
       </Head>
 
       <MainIndex>
+        <Banner/>
+        
         {!articles ? (
           skeletonArr.map(i => {
             return (
