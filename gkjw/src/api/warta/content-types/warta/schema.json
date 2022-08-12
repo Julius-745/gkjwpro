@@ -1,0 +1,198 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wartas",
+  "info": {
+    "singularName": "warta",
+    "pluralName": "wartas",
+    "displayName": "Warta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Contact": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "SubTitle": {
+      "type": "string"
+    },
+    "Contents": {
+      "type": "richtext"
+    },
+    "JudulPelayanan": {
+      "type": "string"
+    },
+    "TanggalPelayanan": {
+      "type": "date"
+    },
+    "subJudulPelayanan": {
+      "type": "string"
+    },
+    "TablePelayanan": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "JudulPelayanan2": {
+      "type": "string"
+    },
+    "TanggalPelayanan2": {
+      "type": "date"
+    },
+    "subJudulPelayanan2": {
+      "type": "string"
+    },
+    "TablePelayanan2": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "JudulBacaan": {
+      "type": "string"
+    },
+    "TableBacaan": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "JudulInformasi": {
+      "type": "string"
+    },
+    "TableInformasi": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "TableIbadahKRW": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "TableIbadahKRWBulanan": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "TableUlangTahunMingguIni": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Catatan": {
+      "type": "string"
+    },
+    "TableInformasiKegiatan": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "BeritaKelahiran": {
+      "type": "richtext"
+    },
+    "Pengumuman1": {
+      "type": "richtext"
+    },
+    "Pengumuman2": {
+      "type": "richtext"
+    },
+    "RembugWarga": {
+      "type": "richtext"
+    },
+    "TableRembugWarga": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ProgramKegiatanPembangunan": {
+      "type": "richtext"
+    },
+    "TitlePengumumanTambahan": {
+      "type": "string"
+    },
+    "PengumumanTambahan": {
+      "type": "richtext"
+    },
+    "DoaSyafaat": {
+      "type": "richtext"
+    },
+    "Penutup": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

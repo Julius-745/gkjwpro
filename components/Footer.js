@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export default function Footer() {
   return (
     <StyledFooter>
-      <center>This demo blog was created with Next.js and Strapi Headless CMS.</center>
+      <center>@ 2022 GKJW Probolinggo</center>
     </StyledFooter>
   )
 }
