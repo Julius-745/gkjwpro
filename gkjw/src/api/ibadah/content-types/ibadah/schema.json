@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ibadahs",
+  "info": {
+    "singularName": "ibadah",
+    "pluralName": "ibadahs",
+    "displayName": "Ibadah"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "JenisIbadah": {
+      "type": "enumeration",
+      "enum": [
+        "Ibadah Minggu",
+        "Ibadah Sukapura",
+        "Ibadah KRW"
+      ]
+    },
+    "KRW": {
+      "type": "enumeration",
+      "enum": [
+        "Betlehem",
+        "Bethesda",
+        "Tongas",
+        "Sukapura"
+      ]
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "Pelayan": {
+      "type": "string"
+    },
+    "Pelayan1": {
+      "type": "string"
+    },
+    "Pelayan2": {
+      "type": "string"
+    },
+    "SongLeader": {
+      "type": "string"
+    },
+    "pria": {
+      "type": "integer"
+    },
+    "wanita": {
+      "type": "integer"
+    },
+    "fund": {
+      "type": "biginteger"
+    },
+    "fund1": {
+      "type": "biginteger"
+    },
+    "fund3": {
+      "type": "biginteger"
+    }
+  }
+}
