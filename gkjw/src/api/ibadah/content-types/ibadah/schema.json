@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ibadah",
     "pluralName": "ibadahs",
-    "displayName": "Ibadah"
+    "displayName": "Ibadah",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -60,6 +61,42 @@
     },
     "fund3": {
       "type": "biginteger"
+    },
+    "KRW1": {
+      "type": "enumeration",
+      "enum": [
+        "Betlehem",
+        "Bethesda",
+        "Tongas",
+        "Sukapura"
+      ]
+    },
+    "KRW2": {
+      "type": "enumeration",
+      "enum": [
+        "Betlehem",
+        "Bethesda",
+        "Tongas",
+        "Sukapura"
+      ]
+    },
+    "KRW3": {
+      "type": "enumeration",
+      "enum": [
+        "Betlehem",
+        "Bethesda",
+        "Tongas",
+        "Sukapura"
+      ]
+    },
+    "KRW4": {
+      "type": "enumeration",
+      "enum": [
+        "Betlehem",
+        "Bethesda",
+        "Tongas",
+        "Sukapura"
+      ]
     }
   }
 }
