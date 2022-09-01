@@ -41,7 +41,7 @@ import {
             </Box>
             <Box textAlign={'left'} paddingTop={20}>
                 <Text fontSize={'3xl'} fontWeight={'bold'}>{article.title}</Text>
-                <Text fontSize={'xl'}>Ayat</Text>
+                <Text fontSize={'xl'}>Ayat Alkitab</Text>
             </Box>
             <Box display={'flex'} alignItems="center" flexDirection={'column'} paddingTop={45}>
                 <Image src={article.image?.data.attributes.url}/>
