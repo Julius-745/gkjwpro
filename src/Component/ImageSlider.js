@@ -1,7 +1,6 @@
 import { Image,Box, Text, Flex, Link } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Detail from "../Screens/Detail";
 
 const ImageSlider = ({slides}) => {
   const MAX_LENGTH = 250;

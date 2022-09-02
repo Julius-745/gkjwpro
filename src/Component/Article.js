@@ -1,16 +1,12 @@
 import {
     Box,
-    Container,
-    Stack,
     Image,
     Text,
-    Button,
     Flex
   } from '@chakra-ui/react'
   import React, {useState, useEffect} from 'react'
   import axios from 'axios';
   import {useParams} from 'react-router-dom';
-  import Photo  from './Majelis.svg';
 
   export const Article = () => {
     const[error, setError] = useState(null);
@@ -23,7 +19,7 @@ import {
             .get(`https://gkjwprob.domcloud.io/api/articles/${id}?populate=*`)
             .then(res => setArticle(res.data.data.attributes))
             .catch(err => setError(err.message));
-    } , []);
+    } , [id]);
     
     if(error) {
         return <div>An error occured: {error.message}</div>
