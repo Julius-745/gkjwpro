@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Skeleton, SkeletonText, SkeletonCircle, Spacer, Box, Container, HStack, VStack, Stack } from "@chakra-ui/react";
+import { Skeleton, SkeletonText, Spacer, Stack } from "@chakra-ui/react";
 
 export const CardSkeleton = () => {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Button, Container, Box, Flex} from "@chakra-ui/react";
+import { Text, Button, Box, Flex} from "@chakra-ui/react";
 import { FaUserAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 
