@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Button, Box, Flex} from "@chakra-ui/react";
+import { Text, Button, Box, Flex, Link} from "@chakra-ui/react";
 import { FaUserAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 
@@ -40,7 +40,9 @@ export const CardIbadah = ({title, date, person, person1, person2, persons}) => 
                 </Box>
             </Flex>
             <Box marginTop={'auto'}>
-                <Button w={'115'} variant={'solid'} color={'white'} bgColor={'#3C64B1'} float={"right"}>Detail</Button>
+                <Link href={'Warta/'}>
+                    <Button w={'115'} variant={'solid'} color={'white'} bgColor={'#3C64B1'} float={"right"}>Detail</Button>
+                </Link>
             </Box>
         </Flex>
     )

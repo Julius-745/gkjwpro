@@ -10,7 +10,7 @@ export const CardJadwalSection = () => {
 
     useEffect(() => {
         axios
-            .get("https://gkjwprob.domcloud.io/api/ibadahs?sort[0]=date%3Adesc&pagination[start]=0&pagination[limit]=3")
+            .get("http://localhost:1337/api/ibadahs?sort[0]=date%3Adesc&pagination[start]=0&pagination[limit]=3")
             .then(res => setIbadah(res.data))
             .catch(err => setError(err.message));
     } , []);
@@ -29,14 +29,14 @@ export const CardJadwalSection = () => {
                     </Container>
                 ) : (
                 <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
-                    <CardIbadah 
-                    key={ibadah.id}
+                    <CardIbadah
+                    key={ibadah.id} 
                     title={ibadah.attributes?.Title}
                     date={ibadah.attributes?.date}
                     person={ibadah.attributes?.Pelayan}
                     person1={ibadah.attributes?.Pelayan1}
                     person2={ibadah.attributes?.Pelayan2}
-                    persons={ibadah.attributes.SongLeader}/>
+                    persons={ibadah.attributes?.SongLeader}/>
                 </Container>
                 )
             })}

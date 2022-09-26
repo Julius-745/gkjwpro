@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Button, Box, Flex} from "@chakra-ui/react";
+import { Text, Button, Box, Flex, Link} from "@chakra-ui/react";
 import { FaUserAlt, FaWallet } from "react-icons/fa";
 import PropTypes from "prop-types";
 import NumberFormat from "react-number-format";
@@ -49,7 +49,9 @@ export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1
                 </Flex>
             </Flex>
                 <Box marginTop={'auto'}>
-                    <Button w={'115'} variant={'solid'} color={'white'} bgColor={'#3C64B1'} float={"right"}>Detail</Button>
+                    <Link href={'Warta/'}>
+                        <Button w={'115'} variant={'solid'} color={'white'} bgColor={'#3C64B1'} float={"right"}>Detail</Button>
+                    </Link>
                 </Box>
             </Flex>
     )
@@ -58,9 +60,9 @@ export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1
 CardLalu.propTypes = {
     title: PropTypes.string,
     date: PropTypes.string,
-    persons1: PropTypes.string,
-    persons2: PropTypes.string,
-    fund: PropTypes.number,
-    fund1: PropTypes.number,
-    fund2: PropTypes.number,
+    persons1: PropTypes.number,
+    persons2: PropTypes.number,
+    fund: PropTypes.string,
+    fund1: PropTypes.string,
+    fund2: PropTypes.string,
 }
