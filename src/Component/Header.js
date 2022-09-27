@@ -14,7 +14,7 @@ import {
   
   export const Header = () => {
     return (
-      <Box pb={{ base: '1', md: '' }} >
+      <Box pb={{ base: '', md: '' }} >
         <Box boxShadow={useColorModeValue('md', 'md-dark')}>
           <Container maxW={"100%"} py={{ base: '5', lg: '5' }}>
             <Flex px={[2,3]}>
