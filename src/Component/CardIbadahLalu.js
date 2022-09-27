@@ -27,7 +27,6 @@ export const CardIbadahLalu = () => {
                         <CardSkeleton />
                     </Container>
                 ) : (
-                    <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
                 <CardLalu
                     key={ibadah.id} 
                     title={ibadah.attributes?.Title}
@@ -38,7 +37,6 @@ export const CardIbadahLalu = () => {
                     fund1={ibadah.attributes?.fund1}
                     fund2={ibadah.attributes?.fund3}
                     />
-                </Container>
                 )
             })}
         </HStack>

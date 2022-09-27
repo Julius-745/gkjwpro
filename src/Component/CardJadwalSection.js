@@ -28,16 +28,14 @@ export const CardJadwalSection = () => {
                         <CardSkeleton />
                     </Container>
                 ) : (
-                <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
                     <CardIbadah
-                    key={ibadah.id} 
-                    title={ibadah.attributes?.Title}
-                    date={ibadah.attributes?.date}
-                    person={ibadah.attributes?.Pelayan}
-                    person1={ibadah.attributes?.Pelayan1}
-                    person2={ibadah.attributes?.Pelayan2}
-                    persons={ibadah.attributes?.SongLeader}/>
-                </Container>
+                        key={ibadah.id} 
+                        title={ibadah.attributes?.Title}
+                        date={ibadah.attributes?.date}
+                        person={ibadah.attributes?.Pelayan}
+                        person1={ibadah.attributes?.Pelayan1}
+                        person2={ibadah.attributes?.Pelayan2}
+                        persons={ibadah.attributes?.SongLeader}/>
                 )
             })}
         </HStack>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Button, Box, Flex, Link} from "@chakra-ui/react";
+import { Text, Button, Box, Flex, Link, useColorModeValue} from "@chakra-ui/react";
 import { FaUserAlt, FaWallet } from "react-icons/fa";
 import PropTypes from "prop-types";
 import NumberFormat from "react-number-format";
@@ -7,7 +7,11 @@ import NumberFormat from "react-number-format";
 export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1, fund2}) => {
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return (
-            <Flex flexDirection={'column'} h={'500px'}>
+            <Box flexDirection={'column'} h={'500px'} bg={useColorModeValue('white', 'gray.800')}
+            borderWidth="1px"
+            rounded="lg"
+            shadow="lg"
+            position="relative" padding={5} w={'calc(100% / 3)'} >
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>
@@ -53,7 +57,7 @@ export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1
                         <Button w={'115'} variant={'solid'} color={'white'} bgColor={'#3C64B1'} float={"right"}>Detail</Button>
                     </Link>
                 </Box>
-            </Flex>
+            </Box>
     )
 }
 

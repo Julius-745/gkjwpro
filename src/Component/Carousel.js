@@ -22,7 +22,7 @@ export const Carousel = () => {
       <Box
       w="100%"
       p={16}
-      color="white">
+      color="white" shadow="xs">
         <ImageSlider slides={articles}/>
       </Box>
   )

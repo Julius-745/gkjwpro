@@ -1,12 +1,16 @@
 import React from "react";
-import { Text, Button, Box, Flex, Link} from "@chakra-ui/react";
+import { Text, Button, Box, Flex, Link, useColorModeValue} from "@chakra-ui/react";
 import { FaUserAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 
 export const CardIbadah = ({title, date, person, person1, person2, persons}) => {
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return (
-        <Flex flexDirection={'column'} h={'500px'}>
+        <Flex flexDirection={'column'} h={'500px'} bg={useColorModeValue('white', 'gray.800')}
+        borderWidth="1px"
+        rounded="lg"
+        shadow="lg"
+        position="relative" padding={5} w={'calc(100% / 3)'}>
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>
