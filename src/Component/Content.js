@@ -2,7 +2,6 @@ import {
     Box,
     Image,
     Text,
-    Stack,
     Flex
 } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown';
