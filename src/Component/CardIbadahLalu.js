@@ -10,7 +10,7 @@ export const CardIbadahLalu = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:1337/api/ibadahs?sort[0]=date%3Adesc&pagination[start]=0&pagination[limit]=3")
+            .get("https://gkjwprob.domcloud.io/api/ibadahs?sort[0]=date%3Adesc&pagination[start]=0&pagination[limit]=3")
             .then(res => setIbadah(res.data))
             .catch(err => setError(err.message));
     } , []);

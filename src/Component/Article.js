@@ -16,7 +16,7 @@ import {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:1337/api/articles/${id}?populate=*`)
+            .get(`https://gkjwprob.domcloud.io/api/articles/${id}?populate=*`)
             .then(res => setArticle(res.data.data.attributes))
             .catch(err => setError(err.message));
     } , [id]);
