@@ -94,7 +94,7 @@ import axios from 'axios';
                     <Text marginTop={5} fontSize={'lg'}><b>{anncs}</b><ReactMarkdown children={anncs2}/></Text>
                     <Text fontSize={'lg'}><b>{rbb}</b>{rbb2}</Text>
                     <Text  marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Jadwal Rembug Warga</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TableRembugWarga.data.attributes.url}/>
+                    <Image htmlWidth={'100%'} htmlHeight={'100%'}  marginTop={2} src={warta.attributes.TableRembugWarga.data.attributes.url}/>
                     <Text marginTop={2} fontSize={'lg'}><b>{ptt}</b><ReactMarkdown children={ptt2}/></Text>
                     <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>{warta.attributes?.TitlePengumumanTambahan}</Text>
                     <Text marginTop={2} fontSize={'lg'}><b>{ann}</b><ReactMarkdown children={ann2}/></Text>
