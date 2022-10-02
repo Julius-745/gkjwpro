@@ -9,7 +9,7 @@ export const Carousel = () => {
 
   useEffect(() => {
       axios
-          .get("http://localhost:1337/api/articles?populate=*")
+          .get("https://gkjwprob.domcloud.io/api/articles?populate=*")
           .then(res => setArticles(res.data))
           .catch(err => setError(err.message));
   } , []);

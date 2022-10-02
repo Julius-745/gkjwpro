@@ -15,7 +15,7 @@ import axios from 'axios';
 
     useEffect(() => {
         axios
-            .get(`http://localhost:1337/api/wartas?populate=*&sort[0]=createdAt%3Adesc&pagination[start]=0&pagination[limit]=1`)
+            .get(`https://gkjwprob.domcloud.io/api/wartas?populate=*&sort[0]=createdAt%3Adesc&pagination[start]=0&pagination[limit]=1`)
             .then(res => setWarta(res.data))
             .catch(err => setError(err.message));
     } , []);
