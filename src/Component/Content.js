@@ -2,7 +2,8 @@ import {
     Box,
     Image,
     Text,
-    Flex
+    Flex,
+    useDimensions,
 } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown';
 import React, {useState, useEffect} from 'react'
@@ -11,6 +12,26 @@ import axios from 'axios';
   export const Content = () => {
     const[error, setError] = useState(null);
     const[warta, setWarta] = useState([]);
+
+    const styles = {
+        image: {
+            width: '100%',
+            height: '100%',
+        },
+        judul: {
+            fontWeight: 'bold',
+            fontSize: '25px',
+            marginTop: 5,
+        },
+        subjudul: {
+            marginTop: 5,
+            fontSize: '20px',
+        },
+        content: {
+            marginTop: 2,
+            fontSize: '12px'
+        }
+    }
 
     useEffect(() => {
         axios
@@ -60,47 +81,47 @@ import axios from 'axios';
             const date = (warta.attributes.createdAt)
             return(
                 <Box key={warta.id} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} src={warta.attributes.Header.data.attributes.url}/>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={10} src={warta.attributes.Contact.data.attributes.url}/>
+                    <Image style={styles.image} src={warta.attributes.Header.data.attributes.url}/>
+                    <Image style={styles.image} marginTop={10} src={warta.attributes.Contact.data.attributes.url}/>
                     <Text marginTop={5} fontSize={'xl'} fontWeight={'bold'}>{new Date(date).toLocaleDateString("id-ID", options)}</Text>
-                    <Text marginTop={5} fontSize={'2xl'} fontWeight={'bold'}>{warta.attributes?.Title}</Text>
-                    <Text marginTop={5} fontWeight={'bold'}>{warta.attributes?.SubTitle}</Text>
-                    <Text marginTop={2} fontSize={'lg'}><ReactMarkdown children={warta.attributes?.Contents}/></Text>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>{warta.attributes?.JudulPelayanan}</Text>
+                    <Text style={styles.judul}>{warta.attributes?.Title}</Text>
+                    <Text style={styles.subjudul}>{warta.attributes?.SubTitle}</Text>
+                    <Text style={styles.content}><ReactMarkdown children={warta.attributes?.Contents}/></Text>
+                    <Text style={styles.judul}>{warta.attributes?.JudulPelayanan}</Text>
                     <Text marginTop={2} fontSize={'xl'} fontWeight={'bold'}>{warta.attributes?.TanggalPelayanan}</Text>
                     <Text fontWeight={'bold'}>{warta.attributes?.subJudulPelayanan}</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TablePelayanan.data.attributes.url}/>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>{warta.attributes?.JudulPelayanan2}</Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TablePelayanan.data.attributes.url}/>
+                    <Text style={styles.judul}>{warta.attributes?.JudulPelayanan2}</Text>
                     <Text marginTop={2} fontSize={'xl'} fontWeight={'bold'}>{warta.attributes?.TanggalPelayanan2}</Text>
                     <Text fontWeight={'bold'}>{warta.attributes?.subJudulPelayanan2}</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TablePelayanan2.data.attributes.url}/>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>{warta.attributes?.JudulBacaan}</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TableBacaan.data.attributes.url}/>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>{warta.attributes?.JudulInformasi}</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TableInformasi.data.attributes.url}/>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Informasi Ibadah KRW</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TableIbadahKRW.data.attributes.url}/>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Jadwal Ibadah KRW Bulan ini</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TableIbadahKRWBulanan.data.attributes.url}/>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Warga Yang Berulang Tahun Bulan ini</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TableUlangTahunMingguIni.data.attributes.url}/>
-                    <Text marginTop={2} fontSize={'lg'} fontWeight={'bold'}><ReactMarkdown children={warta.attributes?.Catatan}/></Text>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Informasi Kegiatan</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={2} src={warta.attributes.TableInformasiKegiatan.data.attributes.url}/>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Informasi Tambahan</Text>
-                    <Text marginTop={5} fontSize={'xl'} fontWeight={'bold'}>Berita Kelahiran</Text>
-                    <Text marginTop={2} fontSize={'lg'}><ReactMarkdown children={warta.attributes?.BeritaKelahiran}/></Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TablePelayanan2.data.attributes.url}/>
+                    <Text style={styles.judul}>{warta.attributes?.JudulBacaan}</Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableBacaan.data.attributes.url}/>
+                    <Text style={styles.judul}>{warta.attributes?.JudulInformasi}</Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableInformasi.data.attributes.url}/>
+                    <Text style={styles.judul}>Informasi Ibadah KRW</Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableIbadahKRW.data.attributes.url}/>
+                    <Text style={styles.judul}>Jadwal Ibadah KRW Bulan ini</Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableIbadahKRWBulanan.data.attributes.url}/>
+                    <Text style={styles.judul}>Warga Yang Berulang Tahun Bulan ini</Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableUlangTahunMingguIni.data.attributes.url}/>
+                    <Text style={styles.content} fontWeight={'bold'}><ReactMarkdown children={warta.attributes?.Catatan}/></Text>
+                    <Text style={styles.judul}>Informasi Kegiatan</Text>
+                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableInformasiKegiatan.data.attributes.url}/>
+                    <Text style={styles.judul}>Informasi Tambahan</Text>
+                    <Text style={styles.judul}>Berita Kelahiran</Text>
+                    <Text style={styles.content}><ReactMarkdown children={warta.attributes?.BeritaKelahiran}/></Text>
                     <Text marginTop={5} fontSize={'lg'}><b>{annc1}</b><ReactMarkdown children={annc2}/></Text>
                     <Text marginTop={5} fontSize={'lg'}><b>{anncs}</b><ReactMarkdown children={anncs2}/></Text>
                     <Text fontSize={'lg'}><b>{rbb}</b>{rbb2}</Text>
-                    <Text  marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Jadwal Rembug Warga</Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'100%'}  marginTop={2} src={warta.attributes.TableRembugWarga.data.attributes.url}/>
-                    <Text marginTop={2} fontSize={'lg'}><b>{ptt}</b><ReactMarkdown children={ptt2}/></Text>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>{warta.attributes?.TitlePengumumanTambahan}</Text>
-                    <Text marginTop={2} fontSize={'lg'}><b>{ann}</b><ReactMarkdown children={ann2}/></Text>
-                    <Text marginTop={10} fontSize={'2xl'} fontWeight={'bold'}>Doa Syafaat Dalam Minggu Ini</Text>
-                    <Text marginTop={2} fontSize={'lg'}><b>{doaas}</b><ReactMarkdown children={doaas2}/></Text>
-                    <Image htmlWidth={'100%'} htmlHeight={'auto'} marginTop={10} src={warta.attributes.Penutup.data.attributes.url}/>
+                    <Text  style={styles.judul}>Jadwal Rembug Warga</Text>
+                    <Image style={styles.image}  marginTop={2} src={warta.attributes.TableRembugWarga.data.attributes.url}/>
+                    <Text style={styles.content}><b>{ptt}</b><ReactMarkdown children={ptt2}/></Text>
+                    <Text style={styles.judul}>{warta.attributes?.TitlePengumumanTambahan}</Text>
+                    <Text style={styles.content}><b>{ann}</b><ReactMarkdown children={ann2}/></Text>
+                    <Text style={styles.judul}>Doa Syafaat Dalam Minggu Ini</Text>
+                    <Text style={styles.content}><b>{doaas}</b><ReactMarkdown children={doaas2}/></Text>
+                    <Image style={styles.image} marginTop={10} src={warta.attributes.Penutup.data.attributes.url}/>
                     <Text fontSize={'lg'}>TETAP DISIPLIN DAN MEMATUHI PROTOKOL KESEHATAN DIMANAPUN ANDA BERADA</Text>
                     <Text fontSize={'lg'} fontWeight={'bold'}>PHMJ, {new Date(date).toLocaleDateString("id-ID", options)}</Text>
                 </Box>
