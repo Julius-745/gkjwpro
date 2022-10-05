@@ -29,7 +29,7 @@ import axios from 'axios';
         },
         content: {
             marginTop: 2,
-            fontSize: '12px'
+            fontSize: '15px'
         }
     }
 
