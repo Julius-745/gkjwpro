@@ -6,12 +6,12 @@ import { CardSkeleton } from "./CardSkeleton";
 
 export const CardIbadahLalu = () => {
     const[error, setError] = useState(null);
-    const[ibadah, setIbadah] = useState([]);
+    const[article, setArticle] = useState([]);
 
     useEffect(() => {
         axios
-            .get("https://gkjwprob.domcloud.io/api/ibadahs?sort[0]=date%3Adesc&pagination[start]=0&pagination[limit]=3")
-            .then(res => setIbadah(res.data))
+            .get("https://gkjwprob.domcloud.io/api/articles?filters[$and][0][category][$eq]=Informasi%20Tahunan&sort[1]=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3")
+            .then(res => setArticle(res.data))
             .catch(err => setError(err.message));
     } , []);
 
@@ -19,23 +19,21 @@ export const CardIbadahLalu = () => {
         return <div>An error occured: {error.message}</div>
     }
 
+    console.log(article);
+
     return(
         <HStack padding={16}>
-            {ibadah.data?.map(ibadah => {
-                return ibadah.isLoading ? (
+            {article.data?.map(article => {
+                return article.isLoading ? (
                     <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
                         <CardSkeleton />
                     </Container>
                 ) : (
                 <CardLalu
-                    key={ibadah.id} 
-                    title={ibadah.attributes?.Title}
-                    date={ibadah.attributes?.date}
-                    persons1={ibadah.attributes?.pria}
-                    persons2={ibadah.attributes?.wanita}
-                    fund={ibadah.attributes?.fund}
-                    fund1={ibadah.attributes?.fund1}
-                    fund2={ibadah.attributes?.fund3}
+                    key={article.id} 
+                    title={article.attributes?.title}
+                    date={article.attributes?.createdAt}
+                    content={article.attributes?.content}
                     />
                 )
             })}
