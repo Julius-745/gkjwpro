@@ -3,7 +3,6 @@ import {
     Image,
     Text,
     Flex,
-    useDimensions,
 } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown';
 import React, {useState, useEffect} from 'react'
@@ -97,10 +96,6 @@ import axios from 'axios';
                     <Image style={styles.image} marginTop={2} src={warta.attributes.TablePelayanan2.data.attributes.url}/>
                     <Text style={styles.judul}>{warta.attributes?.JudulBacaan}</Text>
                     <Image style={styles.image} marginTop={2} src={warta.attributes.TableBacaan.data.attributes.url}/>
-                    <Text style={styles.judul}>{warta.attributes?.JudulInformasi}</Text>
-                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableInformasi.data.attributes.url}/>
-                    <Text style={styles.judul}>Informasi Ibadah KRW</Text>
-                    <Image style={styles.image} marginTop={2} src={warta.attributes.TableIbadahKRW.data.attributes.url}/>
                     <Text style={styles.judul}>Jadwal Ibadah KRW Bulan ini</Text>
                     <Image style={styles.image} marginTop={2} src={warta.attributes.TableIbadahKRWBulanan.data.attributes.url}/>
                     <Text style={styles.judul}>Warga Yang Berulang Tahun Bulan ini</Text>
