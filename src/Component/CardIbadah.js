@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
 export const CardIbadah = ({title, date, person, person1, person2, persons}) => {
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return (
-        <Flex flexDirection={'column'} h={'500px'} bg={useColorModeValue('white', 'gray.800')}
+        <Flex flexDirection={'column'||'row'} h={'500px'} bg={useColorModeValue('white', 'gray.800')}
         borderWidth="1px"
         rounded="lg"
         shadow="lg"
-        position="relative" padding={5} w={'calc(100% / 3)'}>
+        position="relative" padding={5} w={[150, 500]}>
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>

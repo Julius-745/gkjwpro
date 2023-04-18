@@ -42,6 +42,13 @@ import axios from 'axios';
     if(error) {
         return <div>An error occured: {error.message}</div>
     }
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        setTimeout(() => {
+            window.print()
+        }, 5000);
+    }, [warta])
     
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
