@@ -12,7 +12,7 @@ export const CardLalu = ({title, date, content}) => {
         borderWidth="1px"
         rounded="lg"
         shadow="lg"
-        position="relative" padding={5} w={'calc(100% / 3)'}>
+        position="relative" padding={5} gap={4} w={'80%'}>
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>

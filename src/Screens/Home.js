@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   ChakraProvider,
   Stack,
@@ -9,8 +9,15 @@ import { Footer } from '../Component/Footer';
 import { Carousel } from '../Component/Carousel';
 import { CardJadwalSection } from '../Component/CardJadwalSection';
 import { CardIbadahLalu } from '../Component/CardIbadahLalu';
+import WindowScreen from '../hooks/WindowsDimensions';
 
 function Home() {
+const screen = WindowScreen();
+
+useEffect(()=> {
+  console.log(screen)
+}, [screen.width, screen.height]);
+
   return (
     <ChakraProvider>
       <Stack>

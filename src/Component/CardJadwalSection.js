@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
+import {Box, Grid, GridItem} from "@chakra-ui/react";
 import axios from "axios";
-import { Container, HStack} from "@chakra-ui/react";
+import { Container} from "@chakra-ui/react";
 import { CardIbadah } from "./CardIbadah";
 import { CardSkeleton } from "./CardSkeleton";
 
@@ -21,23 +22,32 @@ export const CardJadwalSection = () => {
     }
 
     return(
-        <HStack padding={16}>
-            {ibadah.data?.map(ibadah => {
-                return ibadah.isLoading ? (
-                    <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
-                        <CardSkeleton />
-                    </Container>
-                ) : (
-                    <CardIbadah
-                        key={ibadah.id} 
-                        title={ibadah.attributes?.Title}
-                        date={ibadah.attributes?.date}
-                        person={ibadah.attributes?.Pelayan}
-                        person1={ibadah.attributes?.Pelayan1}
-                        person2={ibadah.attributes?.Pelayan2}
-                        persons={ibadah.attributes?.SongLeader}/>
-                )
-            })}
-        </HStack>
+
+        <Grid
+        h={[180,330,500]}
+        templateRows='repeat(1, 1fr)'
+        templateColumns='repeat(3, 1fr)'
+        gap={2}
+        >
+        {ibadah.data?.map(ibadah => {
+                 return ibadah.isLoading ? (
+                     <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
+                         <CardSkeleton />
+                     </Container>
+                 ) : (
+                    <GridItem border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4}>
+                     <CardIbadah
+                         key={ibadah.id} 
+                         title={ibadah.attributes?.Title}
+                         date={ibadah.attributes?.date}
+                         person={ibadah.attributes?.Pelayan}
+                         person1={ibadah.attributes?.Pelayan1}
+                         person2={ibadah.attributes?.Pelayan2}
+                         persons={ibadah.attributes?.SongLeader}/>
+                    </GridItem>
+                    
+                 )
+             })}
+        </Grid>
     )
 }
