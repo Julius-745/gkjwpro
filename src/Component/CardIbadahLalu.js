@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { Container, HStack} from "@chakra-ui/react";
+import { Container, Grid, GridItem} from "@chakra-ui/react";
 import { CardLalu } from "./CardLalu";
 import { CardSkeleton } from "./CardSkeleton";
 
@@ -22,21 +22,28 @@ export const CardIbadahLalu = () => {
     console.log(article);
 
     return(
-        <HStack padding={16}>
+        <Grid
+        h='500px'
+        templateRows='repeat(1, 1fr)'
+        templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
+        gap={4}
+        >
             {article.data?.map(article => {
                 return article.isLoading ? (
                     <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
                         <CardSkeleton />
                     </Container>
                 ) : (
+                <GridItem>
                 <CardLalu
                     key={article.id} 
                     title={article.attributes?.title}
                     date={article.attributes?.createdAt}
                     content={article.attributes?.content}
                     />
+                </GridItem>
                 )
             })}
-        </HStack>
+        </Grid>
     )
 }
