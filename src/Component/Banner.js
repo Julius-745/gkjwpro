@@ -14,7 +14,6 @@ import {
         width={'100%'}
         height={'500px'}
         position={'relative'}
-        direction={{ base: 'column', md: 'row' }} 
         justify="center"
         backgroundSize={'cover'}
         backgroundRepeat={'no-repeat'}

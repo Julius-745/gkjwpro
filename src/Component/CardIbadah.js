@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Button, Box, Temp, Link, Heading, Grid, Center, Flex, HStack} from '@chakra-ui/react';
+import {Text, Button, Box, Temp, Link, Heading, Grid, Center, Flex, HStack, grid} from '@chakra-ui/react';
 import { Card, CardBody, CardFooter } from '@chakra-ui/card';
 import { FaUserAlt } from 'react-icons/fa';
 import PropTypes from 'prop-types';
@@ -22,42 +22,34 @@ export const CardIbadah = ({
     <Card>
       <Box>
         <Center>
-          <Heading fontSize={[10,15,24]} padding={1}>{title}</Heading>
+          <Heading fontSize={25} padding={1}>{title}</Heading>
         </Center>
         <Center>
-          <Heading fontSize={[6,9,15]} padding={1}>
+          <Heading fontSize={15} padding={1}>
             {new Date(date).toLocaleDateString('id-ID', options)}
           </Heading>
         </Center>
       </Box>
-      <CardBody fontSize={[7,13,22]}>
-        <HStack>
+      <CardBody fontSize={22}>
         <FaUserAlt />
-        <Text padding={[0,3,5]}>{person}</Text>
-        </HStack>
-        <HStack>
+        <Text>{person}</Text>
+        
         <FaUserAlt  />
-        <Text padding={[0,3,5]}>{person1}</Text>
-        </HStack>
-        <HStack>
+        <Text>{person1}</Text>
+        
         <FaUserAlt  />
-        <Text padding={[0,3,5]}>{person2}</Text>
-        </HStack>
-        <HStack>
+        <Text>{person2}</Text>
+        
         <FaUserAlt  />
-        <Text padding={[0,3,5]}>{persons}</Text>
-        </HStack>
+        <Text>{persons}</Text>
       </CardBody>
       <Flex justifyContent='flex-end'>
         <CardFooter>
           <Link href={'Warta/'}>
             <Button
-              size={'xs,sm,md'}
               variant={'solid'}
               color={'white'}
               bgColor={'#3C64B1'}
-              fontSize={[5,13,19]}
-              padding={[1,1,2]}
               float={'right'}
             >
               Detail

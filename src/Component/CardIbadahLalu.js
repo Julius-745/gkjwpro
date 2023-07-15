@@ -25,7 +25,7 @@ export const CardIbadahLalu = () => {
         <Grid
         h='500px'
         templateRows='repeat(1, 1fr)'
-        templateColumns='repeat(2, 1fr)'
+        templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
         gap={4}
         >
             {article.data?.map(article => {

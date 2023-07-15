@@ -9,11 +9,10 @@ const ImageSlider = ({slides}) => {
       {slides.data?.map((slide) => {
         return (
           <Link href={`Detail/${slide.id}`}>
-          <Flex justifyContent={'center'} alignItems={'center'} onClick={''}>
+          <Flex justifyContent={'center'} alignItems={'center'} onClicks={''}>
             <Box
             height={388} 
             width={396}
-            display="flex"
             marginRight={16}
             >
               <Image w={396} h={388} src={slide.attributes.image?.data.attributes.url} alt={''}/>
@@ -24,6 +23,7 @@ const ImageSlider = ({slides}) => {
             </Flex>
           </Flex>
           </Link>
+
         )
       })}
     </Carousel>
